@@ -1,0 +1,31 @@
+PARTH SOOD
++91 8160647491 ⋄ parthsood45@gmail.com ⋄ LinkedIn ⋄ Github
+
+EDUCATION
+Bachelor of Technology (Computer Engineering), PDEU
+Relevant Coursework: Data Architecture, Distributed Systems, Statistics, Software Engineering
+
+SKILLS
+ETL/ELT Workflows, PySpark, Delta Lake, AWS S3, SQL, Redshift
+Production ML Pipelines, MLOps, Model Deployment, Feature Engineering
+RAG, Embeddings, Prompt Engineering, Vector Search (HNSW)
+FastAPI, Flask, Tableau, Power BI, Docker, Git, CI/CD, Linux
+
+WORK EXPERIENCE
+SDE / Data Science Analyst, Aspect Ratio Pvt. Ltd. (Jan 2025 - Present)
+- Developed scalable ML pipelines for patient cohort extraction from structured and unstructured healthcare datasets.
+- Built optimized ETL workflows for analytics dashboards and self-service insights.
+- Followed responsible AI practices with well-tested Python code and deployments.
+
+Software / Machine Learning Researcher, Space Application Centre, ISRO (Jun 2024 - Sept 2024)
+- Architected PySpark pipelines processing 10TB+ mission telemetry data.
+- Implemented streaming ingestion and API-based data pipelines with anomaly detection.
+- Ensured data integrity and reliability for mission-critical systems.
+
+PROJECTS
+High-Dimensional Search Architecture (HNSW Implementation)
+Backend API & Data Store (GoLang/Redis/FastAPI)
+
+TECHNICAL COLLABORATION
+President — CSI PDEU: Led workshops and mentored students on data architecture and MLOps.
+Open Source Contributor — LLM Gateway and AI evaluation tooling.
