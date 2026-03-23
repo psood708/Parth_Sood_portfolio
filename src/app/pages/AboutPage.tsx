@@ -124,6 +124,47 @@ export function AboutPage() {
             ))}
           </div>
         </motion.div>
+
+        {/* Auto-moving technology logo carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.9 }}
+          className="mt-16"
+        >
+          <h2 className="text-3xl font-light mb-6 text-neutral-900 dark:text-white tracking-wider">
+            TECH STACK
+          </h2>
+          <div className="relative overflow-hidden rounded-2xl bg-white/80 dark:bg-black/30 p-5">
+            <div className="flex gap-10 items-center whitespace-nowrap animate-marquee">
+              {[
+                { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+                { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+                { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+                { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+                { name: "Tailwind", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+                { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+                { name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+                { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+              ].concat([
+                { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+                { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+                { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+                { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+                { name: "Tailwind", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+                { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+                { name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+                { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+              ]).map((tech) => (
+                <div key={tech.name + Math.random()} className="flex flex-col items-center justify-center min-w-[100px]">
+                  <img src={tech.logo} alt={`${tech.name} logo`} className="h-12 w-12 object-contain" />
+                  <span className="mt-2 text-xs text-neutral-800 dark:text-neutral-200 font-medium">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white dark:from-black via-white/0 dark:via-black/0 to-white dark:to-black" />
+          </div>
+        </motion.div>
       </div>
     </div>
   );
