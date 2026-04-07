@@ -2,24 +2,30 @@ import { motion } from "motion/react";
 import { Code2, Palette, Zap, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router";
 import { ThemeToggle } from "../components/ThemeToggle";
+import photo_1 from "../../assets/photo_1.jpeg";
 
 export function AboutPage() {
   const navigate = useNavigate();
   const skills = [
     {
       icon: Code2,
-      title: "Development",
-      description: "Proficient in modern web technologies including React, TypeScript, and Node.js",
-    },
-    {
-      icon: Palette,
-      title: "Design",
-      description: "Creating beautiful, user-friendly interfaces with attention to detail",
+      title: "Data Engineering & Pipelines",
+      description: "Expert in building distributed ETL/ELT workflows using PySpark and Delta Lake to manage multi-terabyte datasets.",
     },
     {
       icon: Zap,
-      title: "Performance",
-      description: "Building fast, optimized applications that deliver great user experiences",
+      title: "High-Performance Computing",
+      description: "Proficient in C++, Go, and Python for creating low-latency backends and custom vector indexing solutions.",
+    },
+    {
+      icon: Palette,
+      title: "MLOps & Cloud Infrastructure",
+      description: "Skilled in automating model monitoring and CI/CD pipelines using Docker and AWS cloud-native services.",
+    },
+    {
+      icon: ArrowLeft,
+      title: "Algorithmic Optimization",
+      description: "Implementing advanced mathematical models, from HNSW graph-layering to Kalman Filter-based real-time detection.",
     },
   ];
 
@@ -65,19 +71,23 @@ export function AboutPage() {
             className="space-y-6"
           >
             <p className="text-xl text-neutral-600 dark:text-white/70 leading-relaxed">
-              I'm a passionate full-stack developer with over 5 years of
-              experience in creating web applications. I love turning complex
-              problems into simple, beautiful, and intuitive designs.
+              I am a technical specialist in data engineering and machine learning
+              infrastructure, focused on scalable systems and high-performance
+              computing architectures. I build reliable, production-grade data
+              pipelines and cloud-native AI services that drive measurable ROI.
             </p>
             <p className="text-lg text-neutral-500 dark:text-white/60 leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies,
-              contributing to open-source projects, or sharing my knowledge
-              through technical writing and mentoring.
+              My expertise spans distributed ETL with PySpark, Delta Lake, and
+              Kubernetes-based MLOps orchestration, while optimizing low-latency
+              backends in C++, Go, and Python. I have delivered improved model
+              accuracy, operational efficiency, and data quality in finance,
+              healthcare, and aerospace domains.
             </p>
             <p className="text-lg text-neutral-500 dark:text-white/60 leading-relaxed">
-              My goal is to build products that not only meet user needs but
-              exceed their expectations through thoughtful design and robust
-              functionality.
+              I specialize in AI infrastructure optimization, vector search
+              indexing, and real-time drift detection, using monitoring, CI/CD,
+              and cost-efficient cloud strategies. This combination of technical
+              depth and business impact is central to my professional brand.
             </p>
           </motion.div>
 
@@ -88,9 +98,11 @@ export function AboutPage() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="relative"
           >
-            <div className="aspect-square bg-neutral-200 dark:bg-white/5 flex items-center justify-center border border-neutral-300 dark:border-white/10">
-              <div className="text-8xl">👨‍💻</div>
-            </div>
+            <img
+              src={photo_1}
+              alt="Professional headshot"
+              className="w-full h-full object-cover rounded-xl border border-neutral-300 dark:border-white/10"
+            />
           </motion.div>
         </div>
 
@@ -103,7 +115,7 @@ export function AboutPage() {
           <h2 className="text-3xl font-light mb-12 text-neutral-900 dark:text-white tracking-wider">
             CAPABILITIES
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.title}

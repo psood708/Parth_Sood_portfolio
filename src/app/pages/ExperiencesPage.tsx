@@ -3,6 +3,8 @@ import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router";
 import { ThemeToggle } from "../components/ThemeToggle";
 
+
+
 export function ExperiencesPage() {
   const navigate = useNavigate();
   const experiences = [
@@ -11,11 +13,11 @@ export function ExperiencesPage() {
       position: "Data Science Analyst",
       period: "Jan'2025 - Present",
       description:
-        "Designed and delivered high-throughput AI vector search pipelines using Rust and PostgreSQL. Built full-stack web experiences for enterprise analytics.",
+        "Optimized patient data retrieval and physician targeting through advanced NLP and graph-based modeling",
       achievements: [
-        "Reduced query latency by 70% through Rust-based vector DB optimizations",
-        "Implemented robust CI/CD with automated testing and deployments",
-        "Mentored 4 engineers and led architecture reviews",
+        "Constructed a patient cohort extraction pipeline from scratch, reducing analyst query time by 55% across 10M+ structured and free-text clinical records",
+        "Integrated a physician referral graph using PubMedBERT embeddings that surfaced 2x more high-value targets compared to previous rule-based methods",
+        "Applied BioBERT and clustering techniques to 500K+ EHR notes, uncovering distinct prescribing patterns that reduced client targeting spend by 20%",
       ],
     },
     {
@@ -23,11 +25,11 @@ export function ExperiencesPage() {
       position: "Machine Learning Researcher",
       period: "June'2024 - Sept'2024",
       description:
-        "Built scalable data processing systems and modern React/TypeScript dashboards for operational metrics.",
+        "Reconstructed large-scale satellite telemetry ingestion and implemented real-time anomaly detection using distributed computing",
       achievements: [
-        "Delivered 5+ production applications with 99.9% uptime",
-        "Established reusable component library and design system",
-        "Collaborated with product and design teams to launch new features monthly",
+        "Reconstructed telemetry ingestion using PySpark distributed pipelines over 10TB+ of satellite data, achieving a 60% increase in end-to-end throughput",
+        "Implemented a real-time anomaly detection layer using Kalman Filters that reduced false-positive alerts by 38% for streaming telemetry",
+        "Optimized resource orchestration for Spark training jobs, saving 12+ GPU-hours per weekly run through targeted performance tuning",
       ],
     },
     {
@@ -35,23 +37,11 @@ export function ExperiencesPage() {
       position: "Software Engineer Intern",
       period: "Apr'2023 - Mar'2024",
       description:
-        "Contributed to open-source infrastructure projects and supported full-stack development efforts.",
+        "Transitioned seismic-data systems to cloud-native AWS environments, resulting in substantial gains in model accuracy and revenue",
       achievements: [
-        "Published multiple reusable libraries and templates",
-        "Improved developer onboarding documentation and workflows",
-        "Automated release processes to reduce cycle time",
-      ],
-    },
-    {
-      company: "Creative Solutions Ltd.",
-      position: "Full Stack Developer",
-      period: "2020 - 2022",
-      description:
-        "Developed and maintained multiple client-facing applications. Collaborated with design team to create seamless user experiences.",
-      achievements: [
-        "Built 15+ responsive web applications",
-        "Implemented CI/CD pipelines",
-        "Increased test coverage to 85%",
+        "Migrated a monolithic Spring Boot stack to a cloud-native AWS environment, lifting seismic-data ML model accuracy by 40% with zero production downtime",
+        "Designed and launched RESTful APIs via AWS Elastic Beanstalk and Cognito, which directly supported a 35% increase in quarterly profitability",
+        "Transitioned core services to a cloud-native architecture within a 6-week timeframe to support live high-stakes client demonstrations",
       ],
     },
   ];

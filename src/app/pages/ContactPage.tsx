@@ -3,6 +3,7 @@ import { Mail, Linkedin, Github, Twitter, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { ThemeToggle } from "../components/ThemeToggle";
+import Confetti from "react-confetti";
 
 export function ContactPage() {
   const navigate = useNavigate();
@@ -11,12 +12,47 @@ export function ContactPage() {
     email: "",
     message: "",
   });
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = () => {
+    const newErrors: { [key: string]: string } = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.email.trim()) newErrors.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email is invalid";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for reaching out! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+    try {
+      // Simulate backend submission
+      await new Promise(resolve => setTimeout(resolve, 2000)); // 2 second delay
+      console.log("Form submitted:", formData);
+
+      // Success actions
+      setShowConfetti(true);
+      setShowSuccess(true);
+      setFormData({ name: "", email: "", message: "" });
+      setErrors({});
+
+      // Hide success message after 3 seconds
+      setTimeout(() => setShowSuccess(false), 3000);
+      // Stop confetti after 5 seconds
+      setTimeout(() => setShowConfetti(false), 5000);
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -195,6 +231,54 @@ export function ContactPage() {
           </motion.div>
         </div>
       </div>
+
+      {/* Confetti */}
+      {showConfetti && (
+        <>
+          <Confetti
+            width={window.innerWidth}
+            height={window.innerHeight}
+            numberOfPieces={200}
+            recycle={false}
+            gravity={0.1}
+            initialVelocityX={10}
+            initialVelocityY={10}
+            style={{ position: 'fixed', top: 0, left: 0, zIndex: 1000 }}
+          />
+          <Confetti
+            width={window.innerWidth}
+            height={window.innerHeight}
+            numberOfPieces={200}
+            recycle={false}
+            gravity={0.1}
+            initialVelocityX={-10}
+            initialVelocityY={10}
+            style={{ position: 'fixed', top: 0, left: 0, zIndex: 1000 }}
+          />
+        </>
+      )}
+
+      {/* Success Popup */}
+      {showSuccess && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          className="fixed inset-0 flex items-center justify-center z-50"
+        >
+          <div className="bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-white/20 rounded-lg p-8 shadow-lg">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+            >
+              <div className="text-6xl mb-4">🎉</div>
+              <h3 className="text-2xl font-light text-neutral-900 dark:text-white mb-2">Message Sent!</h3>
+              <p className="text-neutral-600 dark:text-white/70">Thank you for reaching out. I'll get back to you soon.</p>
+            </motion.div>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 }

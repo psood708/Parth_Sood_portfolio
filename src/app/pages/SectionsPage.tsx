@@ -3,6 +3,10 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { ThemeToggle } from "../components/ThemeToggle";
+import experience from "../../assets/experience.jpg";
+import projects from "../../assets/projects.jpg";
+import contact from "../../assets/contact.jpg";
+import about from "../../assets/bout.png";
 
 export function SectionsPage() {
   const navigate = useNavigate();
@@ -23,7 +27,7 @@ export function SectionsPage() {
         "INNOVATIVE",
         "PASSIONATE",
       ],
-      image: "https://images.unsplash.com/photo-1770894807442-108cc33c0a7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDF8fHx8MTc3Mzk0NzA5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      image: about,
       route: "/about",
     },
     {
@@ -37,7 +41,7 @@ export function SectionsPage() {
         "ML ENGINEER",
         "TECH ENTHUSIAST",
       ],
-      image: "https://images.unsplash.com/photo-1665043548178-8e606eca11eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBtaW5pbWFsfGVufDF8fHx8MTc3MzkyOTUyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      image: experience,
       route: "/experiences",
     },
     {
@@ -51,7 +55,7 @@ export function SectionsPage() {
         "INNOVATIVE SOLUTIONS",
         "CODE IS ART",
       ],
-      image: "https://images.unsplash.com/photo-1658806283210-6d7330062704?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlY2hub2xvZ3klMjBkaWdpdGFsfGVufDF8fHx8MTc3Mzg5NzQ3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      image: projects,
       route: "/projects",
     },
     {
@@ -65,7 +69,7 @@ export function SectionsPage() {
         "CONNECT NOW",
         "LET'S TALK",
       ],
-      image: "https://images.unsplash.com/photo-1693159682618-074078ed271e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHdvcmtzcGFjZSUyMGRlc2t8ZW58MXx8fHwxNzczOTE5OTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      image: contact,
       route: "/contact",
     },
   ];
@@ -208,11 +212,9 @@ export function SectionsPage() {
                   src={currentSection.image}
                   alt={currentSection.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  style={{objectPosition: "40% 40%" }}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white text-2xl tracking-widest">EXPLORE</span>
-                </div>
               </motion.div>
             </div>
 
